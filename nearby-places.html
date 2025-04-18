@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/contentpage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /*near-by places*/
+.right{
+    padding-left: 30px;
+    padding-right: 0px; 
+}
+        @media screen and (max-width: 1200px) {
+  .venue-section {
+    flex-direction: column;
+  }
+  .venue-text,
+    .venue-image {
+        flex: unset;
+    }
+  .venue-section .venue-text.right {
+    order: -1;
+    
+  }
+}
 
+    </style>
 </head>
 
 <body>

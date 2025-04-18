@@ -112,6 +112,36 @@ body, html {
         display: block;
     }
 }
+/* Fix dropdown overlap on mobile */
+@media (max-width: 1200px) {
+    .dropdown-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        margin-top: 5px;
+        box-shadow: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu li a {
+        padding-left: 25px; /* slight indent for submenu */
+    }
+}
+
 
 /* Hero Section */
 .hero {
@@ -137,15 +167,21 @@ body, html {
     padding-left: 10rem;
     padding-right: 10rem;
 }
-.hero-buttons button {
+.hero-content p{
+    padding-bottom: 20px;
+    font-size: 2rem;
+}
+.hero-buttons a {
     margin: 10px;
-    padding: 12px 20px;
+    padding: 10px 15px;
     font-size: 16px;
     border: none;
     background-color: var(--secondary-color);;
     color: var(--bg-color);
     border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
+    position: relative;
 }
 
 .slider {
@@ -167,6 +203,18 @@ body, html {
     left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+}
+
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 1
 }
 
 .slide.active {
@@ -191,6 +239,68 @@ body, html {
 
 .arrow.right {
     right: 20px;
+}
+/* Responsive - Tablet */
+@media (max-width: 992px) {
+    .hero-content > h1 {
+        font-size: 2.8rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .hero-buttons a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 576px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-content {
+        position: relative;
+        padding: 0 1rem;
+    }
+
+    .hero-content > h1 {
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        max-width: 200px;
+        margin: 6px 0;
+    }
+
+    .arrow {
+        font-size: 1.2rem;
+        padding: 6px;
+    }
 }
 
 /* Conference & News Section */
@@ -262,7 +372,71 @@ body, html {
         min-width: none;
     }
 }
+
+/* Tablet & small laptop screens */
+@media (max-width: 992px) {
+    .info-section {
+        padding: 50px 8%;
+        gap: 20px;
+    }
+
+    .about-conference h2,
+    .notice-board h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-conference p {
+        font-size: 1rem;
+    }
+
+    .notice h3 {
+        font-size: 16px;
+    }
+
+    .notice p {
+        font-size: 13px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+    .info-section {
+        flex-direction: column;
+        padding: 30px 5%;
+        gap: 15px;
+    }
+
+    .about-conference,
+    .notice-board {
+        width: 100%;
+    }
+
+    .about-conference h2,
+    .notice-board h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .about-conference p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .notice {
+        padding: 12px;
+    }
+
+    .notice h3 {
+        font-size: 15px;
+    }
+
+    .notice p {
+        font-size: 12.5px;
+    }
+}
+
 /*--important dates---*/
+
 .important-dates {
     padding: 60px 10%;
     background-color: white;
@@ -276,15 +450,16 @@ body, html {
 }
 
 .dates-table-container {
-    overflow-x: auto; 
+    width: 100%;
 }
 
 .dates-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px;
     background-color: #fefefe;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    table-layout: fixed; /* Helps text wrap properly */
+    word-wrap: break-word;
 }
 
 .dates-table th,
@@ -295,7 +470,7 @@ body, html {
 }
 
 .dates-table th {
-    background-color:var(--sec-bg-color);
+    background-color: var(--sec-bg-color);
     color: var(--text-color);
     font-size: 1.125rem;
     text-transform: uppercase;
@@ -306,18 +481,47 @@ body, html {
     color: #333;
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 992px) {
+    .important-dates {
+        padding: 50px 8%;
+    }
+
+    .important-dates h2 {
+        font-size: 1.75rem;
+    }
+
+    .dates-table th,
+    .dates-table td {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
     .important-dates {
         padding: 40px 5%;
     }
 
+    .important-dates h2 {
+        font-size: 1.5rem;
+    }
+
     .dates-table {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .dates-table th,
+    .dates-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
     }
 }
+
 /*---conference topics---*/
 .topics-section {
-    padding: 60px 10%;
+    padding: 60px 5%;
     background-color: var(--sec-bg-color);
     text-align: center;
 }
@@ -329,18 +533,18 @@ body, html {
 }
 
 .topics-columns {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
     text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .topics-columns ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    min-width: 250px;
 }
 
 .topics-columns li {
@@ -362,22 +566,14 @@ body, html {
     font-size: 16px;
 }
 
-/* Optional hover effect */
-.topics-columns li:hover {
-    color: var(--secondary-color);
-}
-
-/* Responsive stacking */
-@media (max-width: 1000px) {
-    .topics-columns {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+/* Optional: Tweak for very small screens */
+@media (max-width: 480px) {
+    .topics-section h2 {
+        font-size: 1.5rem;
     }
 
-    .topics-columns ul {
-        width: 100%;
-        max-width: 500px;
+    .topics-columns li {
+        font-size: 1rem;
     }
 }
 
@@ -387,17 +583,18 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 60px 10%;
+    gap: 40px;
     flex-wrap: wrap;
+    background-color: #fff;
 }
 
 .venue-text {
-    flex: 1;
-    /* min-width: 300px; */
+    flex: 1 1 400px;
     padding-right: 30px;
 }
 
 .venue-text h2 {
-    font-size: 30px;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: var(--primary-color);
 }
@@ -410,48 +607,64 @@ body, html {
 }
 
 .venue-image {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 350px;
     text-align: center;
 }
 
 .venue-image img {
     width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
-    max-height: 350px;
     object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive stacking */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 992px) {
     .venue-section {
         flex-direction: column;
-        padding: 40px 5%;
+        padding: 50px 6%;
+        text-align: center;
     }
 
     .venue-text,
     .venue-image {
-        padding: 0;
+        flex: unset; /* Override the flex to prevent uneven spacing */
         width: 100%;
+        padding: 0;
+    }
+
+    .venue-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .venue-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .venue-section {
+        padding: 40px 5%;
     }
 
     .venue-image img {
-        max-height: none;
+        max-width: 100%;
+        border-radius: 8px;
     }
-    .venue-section{
-        padding:60px 0;
+
+    .venue-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .venue-text p {
+        font-size: 0.95rem;
     }
 }
-@media(max-width:450px)
-{
-    .venue-image img{
-        max-width: 250px;
-    }
-  .venue-section{
-    padding: 40px 0px;
-  }
-}
+
+
 
 /*---near by places----*/
 .gallery-section {
@@ -469,7 +682,7 @@ body, html {
 .gallery-slider {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: 700px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;

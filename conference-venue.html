@@ -162,10 +162,29 @@
         <p>&copy; 2025 ICRAMDS Conference. All Rights Reserved.</p>
     </div>
     </footer>
-    <!-- <script src="./js/style.js"></script> -->
+    
     <script>
 
-        
+   // Navbar Toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Handle dropdown toggle on mobile
+const dropdownTriggers = document.querySelectorAll('.dropdown > a');
+
+dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+        if (window.innerWidth <= 1200) {
+            e.preventDefault(); // Prevent default anchor behavior
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle('open');
+        }
+    });
+});     
 //gallery slider
 let galleryIndex = 0;
 const gallerySlides = document.querySelectorAll('.gallery-slide');

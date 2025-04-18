@@ -5,7 +5,20 @@ const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
-console.log("here");
+
+// Handle dropdown toggle on mobile
+const dropdownTriggers = document.querySelectorAll('.dropdown > a');
+
+dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+        if (window.innerWidth <= 1200) {
+            e.preventDefault(); // Prevent default anchor behavior
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle('open');
+        }
+    });
+});
+
 
 // Image Slider
 let currentSlide = 0;
