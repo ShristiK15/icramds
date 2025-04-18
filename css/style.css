@@ -19,7 +19,35 @@ body, html {
     width: 100%;
     height: 100%;
 }
+/* Apply styles for screens smaller than 768px (mobiles) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        text-align: justify;
+    }
 
+    .venue-text, .topics-section, .section-container, .navbar, .footer, p, li {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem; /* adjust for smaller headers */
+    }
+}
+
+/* Optional: Adjust a bit less aggressively for tablets */
+@media (max-width: 992px) and (min-width: 769px) {
+    body {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.4rem;
+    }
+}
+/*check*/
 /* Navbar Styles */
 .navbar {
     display: flex;
