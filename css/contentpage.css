@@ -96,8 +96,15 @@ body{
     line-height: 1.8;
     color: #555;
     margin-bottom: 20px;
+    text-align: left;
 }
-
+.call-for-paper-title ol>li{
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
 /* Responsive tweaks */
 @media (max-width: 768px) {
     .call-for-paper-title h2 {
