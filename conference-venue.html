@@ -90,24 +90,33 @@
     </div>
     <!--gallery-->
     <section class="gallery-section">
-        <h2>Explore Campus</h2>
+        <h2>Nearby Places to Visit</h2>
         <div class="gallery-slider">
-            <div class="gallery-slide active">
-                <img src="images/manit.png" alt="Gallery 1">
-                <div class="slide-caption">Networking Sessions</div>
-            </div>
-            <div class="gallery-slide">
-                <img src="images/manitBuilding.jpg" alt="Gallery 2">
-                <div class="slide-caption">Keynote Speeches</div>
-            </div>
-            <div class="gallery-slide">
-                <img src="images/manit.png" alt="Gallery 3">
-                <div class="slide-caption">Workshops & Panels</div>
-            </div>
-            <button class="gallery-prev">&#10094;</button>
-            <button class="gallery-next">&#10095;</button>
+          <div class="gallery-slide active">
+            <img src="images/manitbg.png" alt="Ujjain">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-maingate.jpg" alt="Bhimbetka">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-hostel.jpg" alt="Sanchi">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-nature.jpg" alt="Bhojpur temple">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-library.jpg" alt="Udayagiri-Caves">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-porche.jpg" alt="Udayagiri-Caves">
+          </div>
+          <div class="gallery-slide">
+            <img src="images/manit-republicday.jpg" alt="Udayagiri-Caves">
+          </div>
+          <button class="gallery-prev">&#10094;</button>
+          <button class="gallery-next">&#10095;</button>
         </div>
-    </section>
+      </section>
     <!--about department-->
     <div class="section-container">
         <section class="venue-section" id="dept-img">
@@ -165,7 +174,45 @@
             <p>&copy; 2025 ICRAMDS Conference. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="./js/style.js"></script>
+    <!-- <script src="./js/style.js"></script> -->
+    <script>
+
+        
+//gallery slider
+let galleryIndex = 0;
+const gallerySlides = document.querySelectorAll('.gallery-slide');
+const galleryPrev = document.querySelector('.gallery-prev');
+const galleryNext = document.querySelector('.gallery-next');
+
+function showGallerySlide(index) {
+  gallerySlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextGallerySlide() {
+  galleryIndex = (galleryIndex + 1) % gallerySlides.length;
+  showGallerySlide(galleryIndex);
+}
+
+function prevGallerySlide() {
+  galleryIndex = (galleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
+  showGallerySlide(galleryIndex);
+}
+
+// Auto-slide every 5 seconds
+setInterval(nextGallerySlide, 5000);
+
+// Manual navigation
+galleryNext.addEventListener('click', nextGallerySlide);
+galleryPrev.addEventListener('click', prevGallerySlide);
+
+// Show first slide
+showGallerySlide(galleryIndex);
+
+    
+    </script>
 </body>
+
 
 </html>

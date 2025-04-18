@@ -5,6 +5,7 @@ const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
+console.log("here");
 
 // Image Slider
 let currentSlide = 0;
@@ -34,7 +35,6 @@ prev.addEventListener('click', prevSlide);
 
 setInterval(nextSlide, 5000);
 
-
 //gallery slider
 let galleryIndex = 0;
 const gallerySlides = document.querySelectorAll('.gallery-slide');
@@ -48,11 +48,13 @@ function showGallerySlide(index) {
 }
 
 function nextGallerySlide() {
+  console.log(galleryIndex);
   galleryIndex = (galleryIndex + 1) % gallerySlides.length;
   showGallerySlide(galleryIndex);
 }
 
 function prevGallerySlide() {
+  console.log(galleryIndex);
   galleryIndex = (galleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
   showGallerySlide(galleryIndex);
 }
