@@ -6,7 +6,7 @@
     --sec-bg-color:#f2f2f2;
   }
 .inner-banner {
-    background-image: url("/images/iitropar-pic-2.jpg");
+    background-image: url("./images/iitropar-pic-2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
