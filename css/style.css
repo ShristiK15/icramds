@@ -22,13 +22,13 @@ body, html {
 /* Apply styles for screens smaller than 768px (mobiles) */
 @media (max-width: 768px) {
     body {
-        font-size: 14px;
-        text-align: justify;
+        font-size: 12px;
+        /* text-align: justify; */
     }
 
     .venue-text, .topics-section, .section-container, .navbar, .footer, p, li {
         font-size: 14px;
-        text-align: justify;
+        /* text-align: justify; */
     }
 
     h1, h2, h3 {
@@ -36,7 +36,6 @@ body, html {
     }
 }
 
-/* Optional: Adjust a bit less aggressively for tablets */
 @media (max-width: 992px) and (min-width: 769px) {
     body {
         font-size: 15px;
@@ -47,7 +46,6 @@ body, html {
         font-size: 1.4rem;
     }
 }
-/*check*/
 /* Navbar Styles */
 .navbar {
     display: flex;
@@ -174,8 +172,9 @@ body, html {
 /* Hero Section */
 .hero {
     position: relative;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 58px;
+    /* height: calc(100vh - 60px); */
+    height:100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -295,7 +294,7 @@ body, html {
 @media (max-width: 576px) {
     .hero {
         flex-direction: column;
-        height: auto;
+        /* height: auto; */
         padding: 80px 20px 40px;
     }
 
