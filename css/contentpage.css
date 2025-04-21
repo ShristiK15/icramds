@@ -228,16 +228,39 @@ body{
     height: 100%;
 }
 /*Author guidelines button*/
-#dowload-btn{
+#download-btn {
     background-color: var(--secondary-color);
     color: var(--sec-bg-color);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
 }
-@media(max-width:400px)
-{
+
+/* Tablet and below */
+@media (max-width: 768px) {
     #download-btn {
-        font-size: 10px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+    #download-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    #download-btn {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+}
+
