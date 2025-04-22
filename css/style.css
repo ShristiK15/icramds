@@ -189,14 +189,14 @@ body, html {
     z-index: 2;
 }
 .hero-content>h1{
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: auto;
     padding-left: 10rem;
     padding-right: 10rem;
 }
 .hero-content p{
     padding-bottom: 20px;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 .hero-buttons a {
     margin: 10px;
@@ -468,6 +468,7 @@ body, html {
     padding: 60px 10%;
     background-color: white;
     text-align: center;
+    position: relative;
 }
 
 .important-dates h2 {
