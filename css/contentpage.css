@@ -92,6 +92,7 @@ body{
     line-height: 1.8;
     color: #555;
     margin-bottom: 20px;
+    text-align: justify;
 }
 .call-for-paper-title ul>li{
     font-size: 1.125rem;
@@ -164,7 +165,7 @@ body{
     text-align: center;
 }
 
-/*list in register-now page*/
+/*list in submission page*/
 .info-list {
     max-width: 800px;
     margin: auto;
@@ -184,7 +185,7 @@ body{
     transition: background 0.3s ease;
   }
 
-  /*tables in register-now page*/
+  /*tables in submission page*/
 .fees-table {
     width: 100%;
     max-width: 700px;
@@ -210,7 +211,9 @@ body{
       font-size: 14px;
     }
 }
-
+#addressId{
+    font-size: 1.5rem;
+}
 /*how to reach map*/
 .map-container {
     position: relative;
