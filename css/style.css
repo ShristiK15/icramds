@@ -62,8 +62,11 @@ body, html {
 .nav-left {
     font-size: 24px;
     font-weight: bold;
+    transition: transform 0.3s ease;
 }
-
+.nav-left:hover {
+    transform: scale(1.05);
+}
 .nav-links {
     display: flex;
     list-style: none;
@@ -73,11 +76,16 @@ body, html {
 .nav-links li {
     position: relative;
 }
-
 .nav-links a {
     color: #fff;
     text-decoration: none;
     padding: 8px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:not(.register-btn):hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
 .register-btn {
