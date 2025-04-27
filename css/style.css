@@ -23,12 +23,12 @@ body, html {
 @media (max-width: 768px) {
     body {
         font-size: 12px;
-        /* text-align: justify; */
+         text-align: justify;
     }
 
     .venue-text, .topics-section, .section-container, .navbar, .footer, p, li {
         font-size: 14px;
-        /* text-align: justify; */
+         text-align: justify; 
     }
 
     h1, h2, h3 {
@@ -144,6 +144,9 @@ body, html {
 
     .nav-toggle {
         display: block;
+    }
+    #navplus{
+        display: none;
     }
 }
 /* Fix dropdown overlap on mobile */
