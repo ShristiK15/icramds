@@ -205,6 +205,9 @@ body, html {
     padding-left: 10rem;
     padding-right: 10rem;
 }
+.hero-content > h1:hover {
+    transform: scale(1.0567);
+}
 .hero-content p{
     padding-bottom: 20px;
     font-size: 1.75rem;
