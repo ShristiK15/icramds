@@ -112,7 +112,15 @@ body, html {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-
+#navdown{
+    display: none;
+}
+.dropdown:hover #navplus{
+    display: none;
+}
+.dropdown:hover #navdown{
+    display:inline;
+}
 .dropdown-menu li a {
     padding: 10px 15px;
     display: block;
@@ -123,6 +131,11 @@ body, html {
     display: none;
     font-size: 24px;
     cursor: pointer;
+}
+#navplus, 
+#navdown {
+    font-size:0.75rem; 
+    padding: 5px;
 }
 
 /* Responsive Nav */
@@ -145,9 +158,8 @@ body, html {
     .nav-toggle {
         display: block;
     }
-    #navplus{
-        display: none;
-    }
+    
+
 }
 /* Fix dropdown overlap on mobile */
 @media (max-width: 1200px) {
@@ -175,9 +187,29 @@ body, html {
     }
 
     .dropdown-menu li a {
-        padding-left: 25px; /* slight indent for submenu */
+        padding-left: 25px; 
+    }
+   
+    .nav-links a {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    .dropdown a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navplus, 
+    #navdown {
+        margin-left: auto; 
     }
 }
+
+
 
 
 /* Hero Section */
