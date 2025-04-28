@@ -307,26 +307,4 @@ body{
 
     }
 }
-/*about conference venue text*/
-@media (max-width: 1200px) {
-    .venue-section {
-        flex-direction: column;
-        padding: 50px 6%;
-        text-align: center;
-    }
 
-    .venue-text,
-    .venue-image {
-        flex: unset; /* Override the flex to prevent uneven spacing */
-        width: 100%;
-        padding: 0;
-    }
-
-    .venue-text h2 {
-        font-size: 1.75rem;
-    }
-
-    .venue-text p {
-        font-size: 1rem;
-    }
-}
