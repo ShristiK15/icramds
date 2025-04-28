@@ -268,4 +268,42 @@ body{
         padding: 5px 10px;
     }
 }
+/*author guideline reasearch topics*/
+.topics-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* or any spacing you prefer between the two columns */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
+.topics-columns ul {
+    flex: 1 1 45%;
+    padding-left: 20px;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.topics-columns li {
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+@media (max-width: 480px) {
+    #authors-topics-column{
+        font-size: 10px;
+    }
+    .topics-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    
+    #authors-topics-columns li {
+        
+        font-size:1rem;
+
+    }
+}
