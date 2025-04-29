@@ -398,8 +398,9 @@ body, html {
 .about-conference{
     flex: 2;
     background-color: var(--sec-bg-color);
-    padding: 10px;
+    padding: 20px;
     /* min-width: 500px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .about-conference h2,
@@ -414,7 +415,9 @@ body, html {
     color: #555;
     text-align: justify;
 }
-
+#about-conference-venue-text {
+    text-align: justify;
+  }
 .notice {
     margin-bottom: 20px;
     padding: 15px;
@@ -422,7 +425,20 @@ body, html {
     background: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
-
+.notice1 {
+    background-color: #eff6ff;
+    border-left: 4px solid #b3d4ff;
+  }
+  
+  .notice2 {
+    background-color: #f0fdf4;
+    border-left: 4px solid #bcf6ce;
+  }
+  
+  .notice3 {
+    background-color: #fff7ed;
+    border-left: 4px solid #ffddb3;
+  }
 .notice h3 {
     margin: 0 0 5px;
     font-size: 18px;
